@@ -51,7 +51,7 @@ VARIABLES
 SubjectID – each subject is given a unique identification number (1-30).  Each subject performs 6 tasks.
 
 TimeID – each action takes place over a period longer than 2.56 seconds.  Each period of 2.56 seconds is given it’s a unique time 
-stamp.
+stamp.  (this variable is not present in dataset2)
 
 AccelorometerMeanX The mean of the acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g' during a 
 2.56 second interval.
@@ -89,3 +89,13 @@ in the Y axis.  The units are radians/second.
 GyroStdZ:  The standard deviation of the angular velocity vector measured by the gyroscope from the smartphone for each window sample 
 in the Z axis.  The units are radians/second. 
 
+Tables 
+
+The above variables are compiled for the 6 different activities each volunteer performed.  Those activities were:
+
+1 WALKING
+2 WALKING_UPSTAIRS
+3 WALKING_DOWNSTAIRS
+4 SITTING
+5 STANDING
+6 LAYING
