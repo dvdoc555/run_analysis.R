@@ -115,6 +115,8 @@ Act_lab<-read.table("UCI HAR Dataset/activity_labels.txt")
 mapply(writeFiles,file=Act_lab$V2,actNum=Act_lab$V1)
 
 rm(Act_lab); rm(Gather_Data)
+rm(writeFiles)
+
 
 
 
