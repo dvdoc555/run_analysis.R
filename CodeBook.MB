@@ -1,0 +1,91 @@
+SUMMARY CHOICES
+
+In analyzing the data provided and instructions given for this assignment I came to rely on the importance of this instruction:
+“4. Extracts only the MEASUREMENTS on the mean and standard deviation for each MEASUREMENT.” (emphasis added)
+My conclusion from this instruction is that I must focus ONLY on measured data and ignore the X_Test and X_Train 561-feature vector 
+with time and frequency domain variables, and focus instead on the “Inertial Signals” contained inside of the test and train folders.  
+These folders contained “The acceleration signal from the smartphone.”  All of the data elsewhere has been manipulated.  According to 
+the ‘Read Me’ - ” - Features are normalized and bounded within [-1,1].”
+
+ Further 
+
+- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total 
+acceleration. 
+The body_acc signals are derived (subtraction is used) and not measured and will not be used.
+
+Further
+
+“The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six 
+activities”(they are WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) This suggests to me that the scientists 
+conducting this trial consider observation 1 to be subject 1 walking, subject 2 walking, subject 3 walking…
+
+There should therefore be 6 tables (1 for each of the 6 activities mentioned above) and each table should have 30 rows.  Nowhere is it 
+suggested that an observation should be 2.56 seconds of the above except implicitly by the data collection.  This does seem to be in 
+conflict with instruction 5 – “From the data set in step 4, creates a second, independent tidy data set with the average of each 
+variable for each activity and each subject.”  If this is the 2nd dataset, I do not see that a first is needed according to 
+instruction.
+
+If I were a contractor, I would call the client immediately due to this apparent contradiction.
+
+Therefore I will collect data on each 2.56 for my “First Data Set” and include an average in the 2nd.
+
+The smart phone used has only the capacity to measure 2 things in 3 axis The features selected for this 
+
+“database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.”
+Only (3*2=) measurement variables are warranted for each mean and each standard deviation.
+
+STUDY DESIGN
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six 
+activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on 
+the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a 
+constant rate of 50Hz. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding 
+windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion 
+components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed 
+to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features
+was obtained by calculating variables from the time and frequency domain. 
+
+VARIABLES
+SubjectID – each subject is given a unique identification number (1-30).  Each subject performs 6 tasks.
+
+TimeID – each action takes place over a period longer than 2.56 seconds.  Each period of 2.56 seconds is given it’s a unique time 
+stamp.
+
+AccelorometerMeanX The mean of the acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g' during a 
+2.56 second interval.
+
+AccelorometerMeanY The mean of the acceleration signal from the smartphone accelerometer Y axis in standard gravity units 'g' during a 
+2.56 second interval.
+
+AccelorometerMeanZ The mean of the acceleration signal from the smartphone accelerometer Z axis in standard gravity units 'g' during a 
+2.56 second interval.
+
+AccelorometerStdX The standard deviation of the acceleration signal from the smartphone accelerometer X axis in standard gravity units 
+'g' during a 2.56 second interval.
+
+AccelorometerStdY The standard deviation of the acceleration signal from the smartphone accelerometer Y axis in standard gravity units
+'g' during a 2.56 second interval.
+
+AccelorometerStdZ The standard deviation of the acceleration signal from the smartphone accelerometer Z axis in standard gravity units 
+'g' during a 2.56 second interval.
+
+GyroMeanX:  The mean of the angular velocity vector measured by the gyroscope from the smartphone for each window sample in the X axis.
+The units are radians/second. 
+
+GyroMeanY:  The mean of the angular velocity vector measured by the gyroscope from the smartphone for each window sample in the Y axis.
+The units are radians/second. 
+
+GyroMeanZ:  The mean of the angular velocity vector measured by the gyroscope from the smartphone for each window sample in the Z axis.
+The units are radians/second. 
+
+GyroStdX:  The standard deviation of the angular velocity vector measured by the gyroscope from the smartphone for each window sample 
+in the X axis.  The units are radians/second. 
+
+GyroStdY:  The standard deviation of the angular velocity vector measured by the gyroscope from the smartphone for each window sample 
+in the Y axis.  The units are radians/second. 
+
+GyroStdZ:  The standard deviation of the angular velocity vector measured by the gyroscope from the smartphone for each window sample 
+in the Z axis.  The units are radians/second. 
+
