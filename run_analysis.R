@@ -107,16 +107,33 @@ writeFiles<-function(file,actNum){
                mean(GryoSDX),mean(GryoSDY),mean(GryoSDZ))
   file1<-paste0("DataSet2/",file,"_Table.csv")
   names(x)[2:13]<-names(Gather_Data)[4:15]
-  write.csv(x,file1)
+  write.table(x,file1,row.names = FALSE)
   
 }
+
+## Write tables to Directories DataSet1 and DataSet2 with writeFiles script
 
 Act_lab<-read.table("UCI HAR Dataset/activity_labels.txt")
 mapply(writeFiles,file=Act_lab$V2,actNum=Act_lab$V1)
 
-rm(Act_lab); rm(Gather_Data)
+### Make Summary Table
+
+
+Gather_Data<-tbl_df(Gather_Data)
+Grouped<-group_by(Gather_Data,Activity)
+
+Summary_Table<-summarise(Grouped,mean(AccelormeterMeanX),mean(AccelormeterMeanY),mean(AccelormeterMeanZ),
+             mean(AccelormeterSDX),mean(AccelormeterSDY),mean(AccelormeterSDZ),
+             mean(GryoMeanX),mean(GryoMeanY),mean(GryoMeanZ),
+             mean(GryoSDX),mean(GryoSDY),mean(GryoSDZ))
+
+names(Summary_Table)[2:13]<-names(Gather_Data)[4:15]
+Summary_Table[,1]<-Act_lab[,2]
+write.table(Summary_Table,"DataSet2/Summary_Table.csv",row.names = FALSE)
+
+## Cleaning off the rest of the files used
+
+rm(Act_lab); rm(Gather_Data);rm(Summary_Table)
 rm(writeFiles)
 
-
-
-
+## End
