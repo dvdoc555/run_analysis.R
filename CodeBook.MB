@@ -48,6 +48,11 @@ to have only low frequency components, therefore a filter with 0.3 Hz cutoff fre
 was obtained by calculating variables from the time and frequency domain. 
 
 VARIABLES
+
+***Note in data set 1 the standard deviations and the means are the standard deviations and means of the 2.56 row data sets with 
+128 measurements from each row.  In data set 2 each measurement is mean of the previous sets data sets – A mean of means and a mean 
+of standard deviations.
+
 SubjectID – each subject is given a unique identification number (1-30).  Each subject performs 6 tasks.
 
 TimeID – each action takes place over a period longer than 2.56 seconds.  Each period of 2.56 seconds is given it’s a unique time 
@@ -99,3 +104,5 @@ The above variables are compiled for the 6 different activities each volunteer p
 4 SITTING
 5 STANDING
 6 LAYING
+
+Also included in data set 2 is a summary table with an average of all subject’s measurements by activity called Summary_Table.
