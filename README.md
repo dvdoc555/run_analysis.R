@@ -1,7 +1,7 @@
 # run_analysis.R
 Assignment: Getting and Cleaning Data Course Project
 
-Copy the uranalysis’s file into R, and there will be 2 tidy Data Sets in files labeled
+Copy the rur_analysis’s file into R, and there will be 2 tidy Data Sets in files labeled
 DataSet1 and DataSet2.  Both files will appear in your working directory.
 See the Code Book for details on the variables in the dataset.
 
